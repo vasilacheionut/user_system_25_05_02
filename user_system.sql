@@ -16,3 +16,11 @@ CREATE TABLE user_logs (
     log_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 );
+
+
+CREATE TABLE profiles (
+    user_id INT PRIMARY KEY,
+    name VARCHAR(100),
+    avatar TEXT,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+);
