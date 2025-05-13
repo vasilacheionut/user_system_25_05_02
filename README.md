@@ -4,6 +4,12 @@ Un sistem simplu de autentificare și administrare a utilizatorilor, construit �
 
 ---
 
+
+---
+Add profile.php
+---
+
+
 ## 📁 Structura Proiect
 
 '''
