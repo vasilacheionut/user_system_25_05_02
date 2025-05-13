@@ -5,37 +5,43 @@ $user = $_SESSION['user'] ?? null;
 
 <div class="navbar">
     <div class="left">
-        <a href="home.php">Home</a>
-        <a href="dashboard.php">Dashboard</a>
-
         <?php if ($user): ?>
-            <a href="user_logs.php">Logs</a>
-            <a href="change_password.php">Change Password</a>
-            <a href="update_profile.php">Profile</a>
-
-            <?php if ($user['role'] === 'root'): ?>
-                <a href="root_panel.php">Root Panel</a>
-                <a href="phpinfo.php">PHP Info</a>
-            <?php endif; ?>
+            <a href="home.php">Home</a>
+            <a href="dashboard.php">Dashboard</a>
+        <?php endif; ?>
+        <?php if ($user['role'] === 'root'): ?>
+            <a href="phpinfo.php">PHP Info</a>
         <?php endif; ?>
     </div>
 
     <div class="right">
         <?php if ($user): ?>
-            <span><?= htmlspecialchars($user['email']) ?> (<?= $user['role'] ?>)</span>
+            <div class="dropdown">
+                <button class="dropdown-button">
+                    <?= htmlspecialchars($user['email']) ?> (<?= $user['role'] ?>)
+                </button>
+                <div class="dropdown-content">
+                    <a href="user_logs.php">Logs</a>
+                    <a href="change_password.php">Change Password</a>
+                    <a href="update_profile.php">Profile</a>
 
-            <!-- 🔒 Logout cu protecție CSRF -->
-            <form action="logout.php" method="post" style="display:inline;">
-                <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($_SESSION['csrf_token'] ?? '') ?>">
-                <button type="submit">Logout</button>
-            </form>
+                    <?php if ($user['role'] === 'root'): ?>
+                        <a href="root_panel.php">Root Panel</a>
+                    <?php endif; ?>
 
+                    <form action="logout.php" method="post">
+                        <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($_SESSION['csrf_token'] ?? '') ?>">
+                        <button type="submit" style="width: 100%; background: none; border: none; padding: 10px; text-align: left;">Logout</button>
+                    </form>
+                </div>
+            </div>
         <?php else: ?>
             <a href="login.php">Login</a>
             <a href="register.php">Register</a>
         <?php endif; ?>
     </div>
 </div>
+
 
 <!-- 🔧 TEST / DEBUG (nu se șterge automat) -->
 <div class="container">

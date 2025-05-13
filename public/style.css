@@ -46,8 +46,7 @@ body {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 10px 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 5px var(--color-content);
     z-index: 999;
 
     form button {
@@ -71,6 +70,47 @@ body {
     display: flex;
     align-items: center;
 }
+
+
+/* ✅ Dropdown styling */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-button {
+    background-color: var(--color-bg);
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--color-bg);
+    min-width: 180px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 1;
+}
+
+.dropdown-content a,
+.dropdown-content form {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: var(--color-content);
+}
+
+.dropdown-content a:hover,
+.dropdown-content form:hover {
+    background-color: var(--color-bg);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
 
 .flash {
     padding: 10px 15px;
