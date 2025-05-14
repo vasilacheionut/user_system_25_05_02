@@ -31,6 +31,8 @@ $user = $_SESSION['user'] ?? null;
 
                     <?php if ($user['role'] === 'root'): ?>
                         <a href="root_panel.php">Root Panel</a>
+                        <a href="delete_account.php" onclick="return confirm('Are you sure you want to delete your account?');">Delete Account</a>
+                        <a href="deleted_users.php">Deleted Users</a>                        
                     <?php endif; ?>
 
                     <form action="logout.php" method="post">

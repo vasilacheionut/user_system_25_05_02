@@ -18,3 +18,13 @@ function get_flash(string $key): ?string {
     }
     return null;
 }
+
+
+function display_flash(): void {
+    foreach (['success', 'error'] as $type) {
+        if ($message = get_flash($type)) {
+            $class = $type === 'success' ? 'flash-success' : 'flash-error';
+            echo "<div class=\"$class\">" . htmlspecialchars($message) . "</div>";
+        }
+    }
+}

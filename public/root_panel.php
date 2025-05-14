@@ -49,7 +49,8 @@ $csrf_token = generate_csrf_token();
     <h1>Root Panel</h1>
     <p>Manage all users</p>
 
-    
+    <?php display_flash(); // Afișează mesajele flash (success / error)
+?>
 
     <table class="user-table">
         <thead>
@@ -77,6 +78,7 @@ $csrf_token = generate_csrf_token();
                                 <option value="root" <?= $user['role'] === 'root' ? 'selected' : '' ?>>root</option>
                             </select>
                             <button type="submit">Update</button>
+                            <a href="delete_account.php?id=<?= $user['id'] ?>" onclick="return confirm('Delete this user?');">Delete</a>
                         </form>
                     <?php else: ?>
                         (you)

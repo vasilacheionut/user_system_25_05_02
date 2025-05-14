@@ -234,7 +234,6 @@ tr.h {
 
 /*view-container*/
 .view-container {
-    max-width: 600px;
     margin: 40px auto;
     background: var(--color-bg);
     padding: 2rem;

@@ -24,3 +24,15 @@ CREATE TABLE profiles (
     avatar TEXT,
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 );
+
+CREATE TABLE deleted_users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    original_user_id INT NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    role VARCHAR(50),
+    deleted_by INT,
+    reason VARCHAR(255),
+    deleted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
