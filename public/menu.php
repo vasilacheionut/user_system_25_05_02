@@ -24,6 +24,7 @@ $user = $_SESSION['user'] ?? null;
                     <a href="user_logs.php">User Logs</a>
                     <a href="change_password.php">Change Password</a>
                     <a href="update_profile.php">Update Profile</a>
+                    <a href="view_profile.php">View Profile</a>
 
                     <?php if ($user['role'] === 'root'): ?>
                         <a href="root_panel.php">Root Panel</a>

@@ -232,4 +232,61 @@ tr.h {
 }
 
 
-
+/*view-container*/
+.view-container {
+    max-width: 600px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    font-family: sans-serif;
+}
+.view-container h1 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 0.5rem;
+}
+.view-container p {
+    margin: 0.8rem 0;
+    font-size: 1rem;
+}
+.view-container strong {
+    display: inline-block;
+    width: 120px;
+    color: #333;
+}
+.view-container img {
+    border-radius: 10px;
+    max-width: 100%;
+    height: auto;
+    margin-top: 0.5rem;
+    border: 1px solid #ccc;
+}
+.alert {
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    font-weight: bold;
+}
+.alert.success {
+    background-color: #d4edda;
+    color: #155724;
+}
+.alert.error {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+a.button-link {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+}
+a.button-link:hover {
+    background-color: #0056b3;
+}
